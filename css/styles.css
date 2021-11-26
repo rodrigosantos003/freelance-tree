@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.menu {
+  overflow: hidden;
+  background-color: #767676;
+}
+
+.menu a {
+  float: left;
+  font-size: 16px;
+  color: #f6f6f6;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.submenu {
+  float: left;
+  overflow: hidden;
+}
+
+.submenu .submenubtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #f6f6f6;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.menu a:hover,
+.submenu:hover,
+.submenubtn {
+  transition: 0.3s;
+  background-color: #99ddcc;
+  color: #141414;
+}
+
+.submenu-items {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #99ddcc;
+  width: 100%;
+  z-index: 1;
+}
+
+.submenu-items a {
+  color: #141414;
+}
+
+.submenu-items a:hover {
+  transition: 0.3s;
+  background-color: #767676;
+  color: #f6f6f6;
+}
+
+.submenu:hover .submenu-items {
+  transition: 0.3s;
+  display: block;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
