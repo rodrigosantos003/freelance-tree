@@ -1,8 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+/*---------------------------------------
+      GERAL              
+  -----------------------------------------*/
+
 body {
   font-family: "Montserrat", sans-serif;
 }
+
+h1,
+h2 {
+  text-align: center;
+}
+
+footer > * {
+  text-align: center;
+}
+
+/*---------------------------------------
+      MENU              
+  -----------------------------------------*/
 
 .menu {
   overflow: hidden;
@@ -11,6 +28,7 @@ body {
 
 .menu a {
   float: left;
+  display: block;
   font-size: 16px;
   color: #f6f6f6;
   text-align: center;
@@ -19,6 +37,7 @@ body {
 }
 
 .submenu {
+  text-align: center;
   float: left;
   overflow: hidden;
 }
@@ -52,6 +71,7 @@ body {
 }
 
 .submenu-items a {
+  text-align: center;
   color: #141414;
 }
 
@@ -66,14 +86,9 @@ body {
   display: block;
 }
 
-h1,
-h2 {
-  text-align: center;
-}
-
-footer > * {
-  text-align: center;
-}
+/*---------------------------------------
+      FORMS              
+  -----------------------------------------*/
 
 .form {
   text-align: center;
