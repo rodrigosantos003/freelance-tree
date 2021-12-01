@@ -2,7 +2,7 @@
       MEDIA QUERIES              
   -----------------------------------------*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
   .menu a {
     float: none;
     width: 100%;
@@ -12,4 +12,21 @@
     float: none;
     width: 100%;
   }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 1200px) {
+  /*
+  TODO: 
+    *Increase font-size
+  */
+}
+
+@media screen and (min-width: 1201px) {
+  /*
+  TODO: 
+    *Increase font-size
+  */
 }
