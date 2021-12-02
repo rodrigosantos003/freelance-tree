@@ -4,6 +4,10 @@
 
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
+  body {
+    font-size: 0.5em;
+  }
+
   .menu a {
     float: none;
     width: 100%;
@@ -21,8 +25,14 @@
 
 /* Desktops and Large Screens */
 @media screen and (max-width: 1200px) {
+  body {
+    font-size: 1.5em;
+  }
 }
 
 /*TV's and Extra Large Screens*/
 @media screen and (min-width: 1201px) {
+  body {
+    font-size: 1.2em;
+  }
 }
