@@ -2,6 +2,7 @@
       MEDIA QUERIES              
   -----------------------------------------*/
 
+/* Mobile Devices */
 @media screen and (max-width: 480px) {
   .menu a {
     float: none;
@@ -14,19 +15,14 @@
   }
 }
 
+/* Tablets and iPads */
 @media screen and (max-width: 768px) {
 }
 
+/* Desktops and Large Screens */
 @media screen and (max-width: 1200px) {
-  /*
-  TODO: 
-    *Increase font-size
-  */
 }
 
+/*TV's and Extra Large Screens*/
 @media screen and (min-width: 1201px) {
-  /*
-  TODO: 
-    *Increase font-size
-  */
 }
