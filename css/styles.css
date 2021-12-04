@@ -106,7 +106,15 @@ a:active {
 }
 
 /*---------------------------------------
-      FORMS              
+      DESCRIPTIONS   
+  -----------------------------------------*/
+
+.description {
+  margin: 50px;
+}
+
+/*---------------------------------------
+      FORMS & BUTTONS              
   -----------------------------------------*/
 
 .form {
@@ -115,14 +123,14 @@ a:active {
 }
 
 .textbox {
-  width: 500px;
+  width: 50%;
   height: 30px;
   border: 1px solid #99ddcc;
   border-radius: 10px;
 }
 
 .button {
-  width: 250px;
+  width: 25%;
   height: 50px;
   border: none;
   border-radius: 10px;

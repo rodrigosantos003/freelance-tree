@@ -29,13 +29,13 @@
 /* Desktops and Large Screens */
 @media screen and (max-width: 1200px) {
   body {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 
 /*TV's and Extra Large Screens*/
 @media screen and (min-width: 1201px) {
   body {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 }
