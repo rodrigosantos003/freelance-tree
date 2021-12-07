@@ -9,6 +9,9 @@
     <!-- CSS FILES -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/media_queries.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="icon" href="img/freelancetree_icon.png">
     <title>Freelance Tree - Registar</title>
 </head>
@@ -42,13 +45,34 @@
             <h3>Faz aqui o teu registo</h3>
 
             <form method="post" action="#">
-                <p><input type="text" name="name" placeholder="Nome" class="textbox"></p>
-                <p><input type="email" name="email" placeholder="Email" class="textbox"></p>
-                <p><input type="password" name="password" placeholder="Password" class="textbox"></p>
-                <p><input type="radio" name="user-type" value="cliente">Cliente
+
+
+
+
+
+
+
+                <div class="input-icons">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" name="name" placeholder="Nome" class="textbox">
+                </div>
+
+                <div class="input-icons">
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" name="email" placeholder="Email" class="textbox">
+                </div>
+
+                <div class="input-icons">
+                    <i class="fa fa-key icon"></i>
+                    <input type="password" name="password" placeholder="Password" class="textbox">
+                </div>
+
+                <div class="user-type">
+                    <input type="radio" name="user-type" value="cliente">Cliente
                     <input type="radio" name="user-type" value="freelancer">Freelancer
-                </p>
-                <p><input type="submit" value="Registar" class="button"></p>
+                </div>
+
+                <input type="submit" value="Registar" class="button">
             </form>
         </section>
     </main>

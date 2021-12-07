@@ -106,6 +106,23 @@ a:active {
 }
 
 /*---------------------------------------
+      HOME   
+  -----------------------------------------*/
+
+.image-text {
+  margin-top: 50px;
+  display: flex;
+}
+
+.image-text > img {
+  width: 50%;
+}
+
+.image-text .text {
+  padding-left: 30px;
+}
+
+/*---------------------------------------
       DESCRIPTIONS   
   -----------------------------------------*/
 
@@ -122,11 +139,28 @@ a:active {
   margin: 50px;
 }
 
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 15px;
+  color: #141414;
+  min-width: 50px;
+  text-align: center;
+}
+
 .textbox {
   width: 50%;
-  height: 45px;
+  padding: 15px;
   border: 1px solid #99ddcc;
   border-radius: 10px;
+  text-align: center;
 }
 
 .button {
@@ -143,15 +177,11 @@ a:active {
   cursor: pointer;
 }
 
-.image-text {
-  margin-top: 50px;
-  display: flex;
+.social-login {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.image-text > img {
-  width: 50%;
-}
-
-.image-text .text {
-  padding-left: 30px;
+.user-type {
+  padding: 10px;
 }

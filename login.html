@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/media_queries.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- SITE IDENTITY -->
     <link rel="icon" href="img/freelancetree_icon.png">
     <title>Freelance Tree - Entrar</title>
@@ -44,14 +46,22 @@
             <h3>Entra na tua conta</h3>
 
             <form method="post" action="#">
-                <p><input type="email" name="email" placeholder="O teu email" class="textbox"></p>
-                <p><input type="password" name="password" placeholder="A tua password" class="textbox"></p>
-                <p>
+                <div class="input-icons">
+                    <i class="fa fa-envelope icon"></i>
+                    <input type="email" name="email" placeholder="Email" class="textbox">
+                </div>
+
+                <div class="input-icons">
+                    <i class="fa fa-key icon"></i>
+                    <input type="password" name="password" placeholder="Password" class="textbox">
+                </div>
+
+                <div class="social-login">
                     <button class="button" onclick="">Google</button>
                     <button class="button" onclick="">Facebook</button>
-                </p>
-                <p><input type="submit" value="Entrar" class="button"></p>
+                </div>
 
+                <input type="submit" value="Entrar" class="button">
             </form>
         </section>
     </main>
