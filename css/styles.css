@@ -124,7 +124,7 @@ a:active {
 
 .textbox {
   width: 50%;
-  height: 30px;
+  height: 45px;
   border: 1px solid #99ddcc;
   border-radius: 10px;
 }
@@ -141,4 +141,17 @@ a:active {
   transition: 0.3s;
   box-shadow: 0 0 1em #99ddcc;
   cursor: pointer;
+}
+
+.image-text {
+  margin-top: 50px;
+  display: flex;
+}
+
+.image-text > img {
+  width: 50%;
+}
+
+.image-text .text {
+  padding-left: 30px;
 }
