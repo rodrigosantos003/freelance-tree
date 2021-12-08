@@ -39,10 +39,20 @@
 
     <!-- MAIN CONTENT -->
     <main>
-        <section class="description">
+        <section class="cover">
+            <figure>
+                <img src="img/freelancetree_logo_transparent.png" alt="Freelance Tree">
+            </figure>
+
+            <button class="button" onclick="window.open('signup.html', '_self')">Faz o teu registo &rarr;</button>
+
+            <p><a href="#about">Saber Mais &darr;</a></p>
+        </section>
+
+        <section class="description" id="about">
             <h2>Bem-Vindo à nossa plataforma freelance</h2>
 
-            <section class="image-text">
+            <div class="image-text">
                 <img src="img/freelancer.jpg" alt="Freelancer">
                 <div class="text">
                     <h3>O que oferecemos?</h3>
@@ -53,13 +63,8 @@
                     <p>
                         Permite também aos freelancers a gestão do seu negócio
                     </p>
-
-                    <button class="button" onclick="window.open('signup.html', '_self')">Faz o teu registo
-                        &rarr;</button>
-
                 </div>
-
-            </section>
+            </div>
         </section>
     </main>
 
@@ -67,6 +72,9 @@
     <footer>
         <p>Copyright &copy; 2021 | Freelance Tree</p>
     </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/smooth_scroll.js" type="javascript"></script>
 
 </body>
 

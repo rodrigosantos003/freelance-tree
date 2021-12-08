@@ -3,6 +3,9 @@
 /*---------------------------------------
       GENERAL              
   -----------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -19,6 +22,10 @@ h1,
 h2,
 footer > * {
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 a:link {
@@ -108,6 +115,30 @@ a:active {
 /*---------------------------------------
       HOME   
   -----------------------------------------*/
+.cover {
+  text-align: center;
+}
+
+.cover p {
+  margin: 50px;
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+#about {
+  margin: 100px !important;
+}
 
 .image-text {
   margin-top: 50px;
@@ -184,4 +215,8 @@ a:active {
 
 .user-type {
   padding: 10px;
+}
+
+.account-question {
+  margin: 10px;
 }

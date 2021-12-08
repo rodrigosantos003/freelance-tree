@@ -17,6 +17,22 @@
     float: none;
     width: 100%;
   }
+
+  #about {
+    margin: 10px;
+  }
+
+  .image-text {
+    display: block;
+  }
+
+  .image-text > img {
+    width: 100%;
+  }
+
+  .image-text .text {
+    padding: 0;
+  }
 }
 
 /* Tablets and iPads */
