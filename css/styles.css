@@ -54,7 +54,7 @@ a:active {
 }
 
 .menu a {
-  float: left;
+  float: right;
   display: block;
   color: #141414;
   text-align: center;
@@ -64,7 +64,7 @@ a:active {
 
 .submenu {
   text-align: center;
-  float: left;
+  float: right;
   overflow: hidden;
 }
 
