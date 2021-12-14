@@ -191,7 +191,7 @@ a:active {
 }
 
 .textbox {
-  width: 50%;
+  width: 70%;
   padding: 15px;
   border: 1px solid #99ddcc;
   border-radius: 10px;
@@ -201,7 +201,7 @@ a:active {
 .button-go,
 .button-fa,
 .button {
-  width: 25%;
+  width: 35%;
   height: 50px;
   border: none;
   border-radius: 10px;
@@ -218,7 +218,6 @@ a:active {
 }
 
 .button-fa {
-  margin-left: 0;
   background: #4267b2;
   border: 1px solid #3e61a8;
   color: white;
