@@ -246,7 +246,7 @@ a:active {
 /*---------------------------------------
       USER PAGES              
   -----------------------------------------*/
-.freelancer {
+.user {
   text-align: center;
 }
 
@@ -270,7 +270,9 @@ a:active {
 }
 
 .work-list-item:hover {
+  transition: 0.3s;
   background: #99ddcc;
+  color: #141414;
   cursor: pointer;
 }
 
