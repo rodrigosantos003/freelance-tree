@@ -242,3 +242,39 @@ a:active {
 .account-question {
   margin: 10px;
 }
+
+/*---------------------------------------
+      USER PAGES              
+  -----------------------------------------*/
+.freelancer {
+  text-align: center;
+}
+
+#profile {
+  width: 50%;
+  float: left;
+}
+
+#work {
+  width: 50%;
+  float: left;
+}
+
+.work-list {
+  list-style-type: none;
+}
+
+.work-list-item {
+  padding: 10px;
+  overflow: auto;
+}
+
+.work-list-item:hover {
+  background: #99ddcc;
+  cursor: pointer;
+}
+
+.work-list-item img {
+  width: 15%;
+  float: left;
+}
