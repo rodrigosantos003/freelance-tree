@@ -262,6 +262,8 @@ a:active {
 
 .work-list {
   list-style-type: none;
+  margin-right: 20%;
+  margin-left: 20%;
 }
 
 .work-list-item {
@@ -277,6 +279,6 @@ a:active {
 }
 
 .work-list-item img {
-  width: 15%;
+  width: 30%;
   float: left;
 }
