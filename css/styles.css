@@ -3,12 +3,6 @@
 /*---------------------------------------
       GENERAL              
   -----------------------------------------*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -50,14 +44,20 @@ a:active {
   color: #99ddcc;
 }
 
+header {
+  padding-top: 40px;
+}
+
 /*---------------------------------------
       NAVBAR              
   -----------------------------------------*/
-
 .menu {
   overflow: hidden;
   background-color: #99ddcc;
-  margin-bottom: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .menu a {
@@ -119,10 +119,6 @@ a:active {
   display: block;
 }
 
-footer {
-  padding-bottom: 30px;
-}
-
 /*---------------------------------------
       HOME   
   -----------------------------------------*/
@@ -152,7 +148,7 @@ footer {
 }
 
 .image-text {
-  margin-top: 65px;
+  margin-top: 50px;
   display: flex;
 }
 
@@ -165,7 +161,7 @@ footer {
 }
 
 #developers {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 /*---------------------------------------
