@@ -58,6 +58,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 .menu a {
@@ -100,7 +101,7 @@ header {
   left: 0;
   background-color: #f6f6f6;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .submenu-items a {
@@ -111,12 +112,12 @@ header {
 .submenu-items a:hover {
   transition: 0.3s;
   background-color: #99ddcc;
-  color: #141414;
 }
 
 .submenu:hover .submenu-items {
   transition: 0.3s;
   display: block;
+  position: fixed;
 }
 
 /*---------------------------------------
