@@ -59,10 +59,8 @@
                 </div>
 
                 <div class="social-login">
-                    <button class="button-go"
-                        onclick="location.href='https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2Fb%2F0%2FAddMailService&followup=https%3A%2F%2Faccounts.google.com%2Fb%2F0%2FAddMailService&flowName=GlifWebSignIn&flowEntry=ServiceLogin'">Google</button>
-                    <button class="button-fa"
-                        onclick="location.href='https://www.facebook.com/?ocid=topsitePT-PT'">Facebook</button>
+                    <button class="button-go" onclick="googleLogin()">Google</button>
+                    <button class="button-fa" onclick="facebookLogin()">Facebook</button>
                 </div>
 
                 <input type="submit" value="Entrar" class="button">
@@ -78,6 +76,8 @@
     <footer>
         <p>Copyright &copy; 2021 | Freelance Tree</p>
     </footer>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>

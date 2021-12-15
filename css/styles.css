@@ -3,6 +3,12 @@
 /*---------------------------------------
       GENERAL              
   -----------------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -51,6 +57,7 @@ a:active {
 .menu {
   overflow: hidden;
   background-color: #99ddcc;
+  margin-bottom: 50px;
 }
 
 .menu a {
@@ -112,6 +119,10 @@ a:active {
   display: block;
 }
 
+footer {
+  padding-bottom: 30px;
+}
+
 /*---------------------------------------
       HOME   
   -----------------------------------------*/
@@ -141,7 +152,7 @@ a:active {
 }
 
 .image-text {
-  margin-top: 50px;
+  margin-top: 65px;
   display: flex;
 }
 
@@ -154,7 +165,7 @@ a:active {
 }
 
 #developers {
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
 /*---------------------------------------
