@@ -1,8 +1,6 @@
 /*---------------------------------------
-      MEDIA QUERIES              
+      MOBILE DEVICES              
   -----------------------------------------*/
-
-/* Mobile Devices */
 @media screen and (max-width: 480px) {
   body {
     font-size: 0.5em;
@@ -48,7 +46,9 @@
   }
 }
 
-/* Tablets and iPads */
+/*---------------------------------------
+      TABLETS & iPADES              
+  -----------------------------------------*/
 @media screen and (max-width: 768px) {
   body {
     font-size: 0.7em;
@@ -64,14 +64,18 @@
   }
 }
 
-/* Desktops and Large Screens */
+/*---------------------------------------
+      DESKTOPS & LARGE SCREENS              
+  -----------------------------------------*/
 @media screen and (max-width: 1200px) {
   body {
     font-size: 0.9em;
   }
 }
 
-/*TV's and Extra Large Screens*/
+/*---------------------------------------
+      TV'S & EXTRA-LARGE SCREENS             
+  -----------------------------------------*/
 @media screen and (min-width: 1201px) {
   body {
     font-size: 1em;
