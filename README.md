@@ -12,10 +12,11 @@ Projeto Final IPW (CTeSP TPSI)
 
 ### Features
 
-```mermaid
-flowchart LR
-A[FreelanceTree] --> B[Login]
-  A --> C[Sign Up]
-  A --> D[Users]
+```
+@startuml firstDiagram
 
+Alice -> Bob: Hello
+Bob -> Alice: Hi!
+		
+@enduml
 ```
