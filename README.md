@@ -12,7 +12,7 @@ Projeto Final IPW (CTeSP TPSI)
 
 ### Features
 
-````mermaid
+```mermaid
 FreelanceTree --> Login
 FreelanceTree --> Sign Up
 FreelanceTree --> Users
@@ -25,6 +25,4 @@ Freelancers --> Manage proposals done to clients
 Freelancers --> Manage "closed" proposals
 Clients --> Create work offers
 Clients --> Manage work offers and freelancers' proposals
-
-​```
-````
+```
