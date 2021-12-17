@@ -13,6 +13,7 @@ Projeto Final IPW (CTeSP TPSI)
 ### Features
 
 ```mermaid
+graph LR
 FreelanceTree --> Login
 FreelanceTree --> Sign Up
 FreelanceTree --> Users
