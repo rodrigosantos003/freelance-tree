@@ -24,7 +24,9 @@ div {
 }
 
 ul,
-nav ul {
+ol,
+nav ul,
+nav ol {
   list-style: none;
   list-style-image: none;
 }
@@ -40,7 +42,7 @@ nav ul {
 }
 
 li {
-  text-align: inherit;
+  text-align: -webkit-match-parent;
 }
 
 a {
@@ -85,6 +87,7 @@ ul {
   padding: 60px 0 60px 60px;
   padding-right: 28px;
   overflow: hidden;
+  -webkit-box-flex: 1;
   flex: 1 1;
 }
 
@@ -92,6 +95,12 @@ ul {
   font-size: 40px;
   line-height: 120%;
   margin-bottom: 6px;
+}
+
+.rich-text .main-page {
+  margin-bottom: 40px;
+  max-width: 650px;
+  display: block;
 }
 
 .main-page h2 {
@@ -119,9 +128,25 @@ ul {
   display: block;
 }
 
+.main-page .articles .media-wrapper img {
+  width: 100%;
+  min-height: 100%;
+  min-width: 101%;
+  object-fit: cover;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .main-page .articles > div {
+  -webkit-box-flex: 0;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: calc(33.33% - 32px);
   margin: 0 16px 44px;
+}
+
+a:-webkit-any-link {
+  cursor: pointer;
 }
