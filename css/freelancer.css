@@ -41,10 +41,6 @@ nav ol {
   margin-bottom: 14px;
 }
 
-li {
-  text-align: -webkit-match-parent;
-}
-
 a {
   text-decoration: none;
   margin: 0;
@@ -87,7 +83,6 @@ ul {
   padding: 60px 0 60px 60px;
   padding-right: 28px;
   overflow: hidden;
-  -webkit-box-flex: 1;
   flex: 1 1;
 }
 
@@ -140,13 +135,8 @@ ul {
 }
 
 .main-page .articles > div {
-  -webkit-box-flex: 0;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: calc(33.33% - 32px);
   margin: 0 16px 44px;
-}
-
-a:-webkit-any-link {
-  cursor: pointer;
 }
