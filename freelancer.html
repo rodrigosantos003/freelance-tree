@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS FILES -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="css/freelancer.css">
+    <link rel="stylesheet" type="text/css" href="css/media_queries.css">
+
+    <!-- SITE IDENTITY -->
+    <link rel="icon" href="img/freelancetree_icon.png">
+    <title>Freelance Tree - Freelancer</title>
+</head>
+
+<body>
+    <!-- NAVIGATION BAR-->
+    <nav class="menu" id="navbar">
+        <a href="client.html">Página Clientes</a>
+        <a href="freelancer.html">Página Freelancers</a>
+        <a href="signup.html">Registar</a>
+        <a href="login.html">Entrar</a>
+        <div class="submenu">
+            <button class="submenubtn">Categorias &darr;</button>
+            <nav class="submenu-items" id="subnav">
+                <a href="categorias/digital_marketing.html">Marketing Digital</a>
+                <a href="categorias/graphics_design.html">Gráficos & Design</a>
+                <a href="categorias/music_audio.html">Música & Áudio</a>
+                <a href="categorias/video_animation.html">Vídeo & Animação</a>
+                <a href="categorias/writing.html">Escrita & Redação</a>
+                <a href="categorias/programming_tech.html">Programação & Tech</a>
+                <a href="categorias/business.html">Negócios</a>
+                <a href="categorias/data.html">Dados</a>
+            </nav>
+        </div>
+        <a href="index.html">Início</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="max-width-container">
+            <nav class="left-navbar">
+                <div class="mobile-overlay"></div>
+                <div class="sticky-content">
+                    <h5>Escolha a sua categoria:</h5>
+                    <ul class="categorias">
+                        <li>
+                            <a href="categorias/data.html">Dados</a>
+                        </li>
+                        <li>
+                            <a href="categorias/business.html">Negócios</a>
+                        </li>
+                        <li>
+                            <a href="categorias/programming_tech.html">Programação & Tecnologia</a>
+                        </li>
+                        <li>
+                            <a href="categorias/writing.html">Escrita & Redação </a>
+                        </li>
+                        <li>
+                            <a href="categorias/video_animation.html">Video & Animação</a>
+                        </li>
+                        <li>
+                            <a href="categorias/music_audio.html">Música & Áudio</a>
+                        </li>
+                        <li>
+                            <a href="categorias/graphics_design.html">Gráficos & Design</a>
+                        </li>
+                        <li>
+                            <a href="categorias/digital_marketing.html">Marketing Digital</a>
+                        </li>
+                    </ul>
+                    <h5>Gestão</h5>
+                    <div>
+                        <ul class="top-articles">
+                            <li>
+                                <a href="">Propostas fechadas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="content-body undefined">
+                <div class="main-page">
+                    <h1> Negócios, Marketing e Branding</h1>
+                    <div class="rich-text">
+                        <h2>
+                            <span> Tudo o que você precisa para crescer o seu negócio</span>
+                        </h2>
+                        <p>
+                            <span> Recursos online práticos que cobrem tudo o que você precisa saber sobre marketing
+                                digital, animação de video, escrita e redação, programação e tecnologia, gráficos e
+                                design
+                                e
+                                muito mais</span>
+                        </p>
+                    </div>
+                    <div class="articles">
+                        <div>
+                            <a href="javascript:openInfo('data')" class="media-wrapper">Dados</a>
+                            <a href="">
+                                <img src="https://dataguide.com.br/wp-content/uploads/2021/05/lock-icon-whilst-man-is-using-mouse.jpg-1024x572.png"
+                                    width="200px">
+                            </a>
+                            <div id="data" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('data')">&times;</span>
+                                        <h2>Dados</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('business')" class="media-wrapper">Negócios</a>
+                            <a href="">
+                                <img src="https://www.buildabusiness.africa/images/Sub-Pages-Guides.jpg" width="200px">
+                            </a>
+                            <div id="business" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('business')">&times;</span>
+                                        <h2>Negócios</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('tech')" class="media-wrapper">Programação & Tecnologia</a>
+                            <a href="">
+                                <img src="data:image/png;base64,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"
+                                    width="250px">
+                            </a>
+                            <div id="tech" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('tech')">&times;</span>
+                                        <h2>Programação & Tecnologia</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('writing')" class="media-wrapper">Escrita & Redação</a>
+                            <a href="">
+                                <img src="https://neilpatel.com/wp-content/uploads/2021/02/copywriting-guide-.png"
+                                    width="200px">
+                            </a>
+                            <div id="writing" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('writing')">&times;</span>
+                                        <h2>Escrita & Redação</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('video')" class="media-wrapper">Video e Animação</a>
+                            <a href="">
+                                <img src="https://visme.co/blog/wp-content/uploads/2021/12/How-to-Make-a-YouTube-Video-Thumbnail-500x280.jpg"
+                                    width="200px">
+                            </a>
+                            <div id="video" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('video')">&times;</span>
+                                        <h2>Video e Animação</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('music')" class="media-wrapper">Música & Aúdio</a>
+                            <a href="">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Louvre_Audio_tour_for_Korean.jpg/440px-Louvre_Audio_tour_for_Korean.jpg"
+                                    width="200px">
+                            </a>
+                            <div id="music" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('music')">&times;</span>
+                                        <h2>Música & Aúdio</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('graphics')" class="media-wrapper">Gráficos e Design</a>
+                            <a href="">
+                                <img src="https://josephmuciraexclusives.com/wp-content/uploads/2020/08/How-to-Design-Ad-Graphics.jpg"
+                                    width="200px">
+                            </a>
+                            <div id="graphics" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('graphics')">&times;</span>
+                                        <h2>Gráficos e Design</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div>
+                            <a href="javascript:openInfo('marketing')" class="media-wrapper">Marketing Digital</a>
+                            <a href="/marketing.html">
+                                <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2021/08/the-ultimate-guide-to-digital-marketing-61726311bf393-sej-1280x720.png"
+                                    width="200px">
+                            </a>
+                            <div id="marketing" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <span class="close" onclick="closeInfo('marketing')">&times;</span>
+                                        <h2>Marketing Digital</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Some text in the Modal Body</p>
+                                        <p>Some other text...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Copyright &copy; 2021 | Freelance Tree</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/index.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>
