@@ -24,9 +24,7 @@ img {
 }
 
 ul,
-ol,
-nav ul,
-nav ol {
+nav ul {
   list-style: none;
   list-style-image: none;
 }
@@ -84,12 +82,6 @@ ul {
   text-align: center;
 }
 
-.rich-text .main-page {
-  margin-bottom: 40px;
-  max-width: 650px;
-  display: block;
-}
-
 .main-page h2 {
   font-size: 20px;
   line-height: 28px;
@@ -113,17 +105,6 @@ ul {
   overflow: hidden;
   position: relative;
   display: block;
-}
-
-.main-page .articles .media-wrapper img {
-  width: 100%;
-  min-height: 100%;
-  min-width: 101%;
-  object-fit: cover;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .main-page .articles > div {
