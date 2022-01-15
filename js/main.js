@@ -18,6 +18,16 @@ window.onscroll = function () {
   -----------------------------------------*/
 var storageSize = localStorage.length;
 
+function listAccounts() {
+  let accounts = [];
+
+  for (let i = 1; i <= storageSize; i++) {
+    accounts.push(JSON.parse(localStorage.getItem(i)));
+  }
+
+  return accounts;
+}
+
 //login with google
 function googleLogin() {
   window.open(
@@ -47,7 +57,7 @@ function signUp() {
     if (typeFreelancer.checked) {
       localStorage.setItem(
         storageSize + 1,
-        JSON.stringify([name, email, password, "freelancer"])
+        JSON.stringify([name, email, password, "freelancer", []])
       );
     } else {
       localStorage.setItem(
@@ -71,25 +81,19 @@ function logIn() {
   let email = document.getElementById("login-email").value;
   let password = document.getElementById("login-password").value;
 
-  let accounts = [];
+  let accounts = listAccounts();
 
   let found = false;
 
   if (email != "" && password != "") {
-    for (let i = 1; i <= storageSize; i++) {
-      accounts.push(JSON.parse(localStorage.getItem(i)));
-    }
-
     for (let k = 0; k < accounts.length; k++) {
-      for (let x = 0; x < accounts[k].length; x++) {
-        if (accounts[k][1] == email && accounts[k][2] == password) {
-          found = true;
-          sessionStorage.setItem("currentLogin", email);
-          if (accounts[k][3] == "freelancer") {
-            window.open("../freelancer.html", "_self");
-          } else {
-            window.open("../client.html", "_self");
-          }
+      if (accounts[k][1] == email && accounts[k][2] == password) {
+        found = true;
+        sessionStorage.setItem("currentLogin", email);
+        if (accounts[k][3] == "freelancer") {
+          window.open("../freelancer.html", "_self");
+        } else {
+          window.open("../client.html", "_self");
         }
       }
     }
@@ -104,27 +108,28 @@ function logIn() {
 }
 
 function addProposal(title, description) {
-  let accounts = [];
+  let accounts = listAccounts();
 
-  for (let i = 1; i <= storageSize; i++) {
-    accounts.push(JSON.parse(localStorage.getItem(i)));
-  }
+  let proposals = [];
 
   for (let k = 0; k < accounts.length; k++) {
-    for (let x = 0; x < accounts[k].length; x++) {
-      if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
-        accounts[k][4] = [title, description];
-        localStorage.setItem(
-          k + 1,
-          JSON.stringify([
-            accounts[k][0],
-            accounts[k][1],
-            accounts[k][2],
-            accounts[k][3],
-            accounts[k][4],
-          ])
-        );
+    if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
+      for (let m = 0; m < accounts[k][4].length; m++) {
+        proposals.push(accounts[k][4][m]);
       }
+
+      proposals.push([title, description]);
+
+      localStorage.setItem(
+        k + 1,
+        JSON.stringify([
+          accounts[k][0],
+          accounts[k][1],
+          accounts[k][2],
+          accounts[k][3],
+          proposals,
+        ])
+      );
     }
   }
 }
