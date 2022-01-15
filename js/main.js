@@ -26,10 +26,12 @@ function facebookLogin() {
 var freelancers = [];
 var clients = [];
 
+var storageSize = localStorage.length;
+
 function signUp() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+  let name = document.getElementById("signup-name").value;
+  let email = document.getElementById("signup-email").value;
+  let password = document.getElementById("signup-password").value;
   let typeFreelancer = document.querySelector("#freelancer");
   let typeClient = document.querySelector("#client");
 
@@ -40,38 +42,58 @@ function signUp() {
     (typeFreelancer.checked || typeClient.checked)
   ) {
     if (typeFreelancer.checked) {
-      freelancers.push([name, email, password]);
-
-      localStorage.setItem("freelancerUsers", JSON.stringify(freelancers));
+      localStorage.setItem(
+        storageSize + 1,
+        JSON.stringify([name, email, password, "freelancer"])
+      );
     } else {
-      clients.push([name, email, password]);
-
-      localStorage.setItem("clientUsers", JSON.stringify(clients));
+      localStorage.setItem(
+        storageSize + 1,
+        JSON.stringify([name, email, password, "client"])
+      );
     }
 
     alert("Conta criada com sucesso!");
 
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
+    document.getElementById("signup-name").value = "";
+    document.getElementById("signup-email").value = "";
+    document.getElementById("signup-password").value = "";
     document.querySelector("#freelancer").checked = false;
     document.querySelector("#client").checked = false;
   } else alert("Os campos têm de estar preenchidos!");
 }
 
 function logIn() {
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+  let email = document.getElementById("login-email").value;
+  let password = document.getElementById("login-password").value;
 
-  let freelanceUsers = JSON.parse(localStorage.getItem("freelancerUsers"));
+  let accounts = [];
+
+  let found = false;
 
   if (email != "" && password != "") {
-    for (let i = 0; i < freelanceUsers.length; i++) {
-      for (let x = 0; x < freelanceUsers[i].length; x++) {
-        if (freelanceUsers[i][1] == email && freelanceUsers[i][2] == password) {
-          window.open("../freelancer.html", "_self");
+    for (let i = 1; i <= storageSize; i++) {
+      accounts.push(JSON.parse(localStorage.getItem(i)));
+    }
+
+    for (let k = 0; k < accounts.length; k++) {
+      for (let x = 0; x < accounts[k].length; x++) {
+        if (accounts[k][1] == email && accounts[k][2] == password) {
+          found = true;
+          if (accounts[k][3] == "freelancer") {
+            window.open("../freelancer.html", "_self");
+          } else {
+            window.open("../client.html", "_self");
+          }
         }
       }
     }
+
+    if (!found) {
+      alert("Os dados estão incorretos!");
+    }
+
+    document.getElementById("login-email").value = "";
+    document.getElementById("login-password").value = "";
   } else alert("Os campos têm de estar preenchidos!");
 }
