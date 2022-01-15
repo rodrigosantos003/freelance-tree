@@ -1,4 +1,7 @@
-//hide navbar on scroll
+/*---------------------------------------
+              GENERAL            
+  -----------------------------------------*/
+//hide navbar with scroll
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
@@ -9,6 +12,11 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollPos;
 };
+
+/*---------------------------------------
+              ACCOUNTS            
+  -----------------------------------------*/
+var storageSize = localStorage.length;
 
 //login with google
 function googleLogin() {
@@ -23,11 +31,6 @@ function facebookLogin() {
 }
 
 //sign up
-var freelancers = [];
-var clients = [];
-
-var storageSize = localStorage.length;
-
 function signUp() {
   let name = document.getElementById("signup-name").value;
   let email = document.getElementById("signup-email").value;
@@ -63,6 +66,7 @@ function signUp() {
   } else alert("Os campos têm de estar preenchidos!");
 }
 
+//log in
 function logIn() {
   let email = document.getElementById("login-email").value;
   let password = document.getElementById("login-password").value;
@@ -80,6 +84,7 @@ function logIn() {
       for (let x = 0; x < accounts[k].length; x++) {
         if (accounts[k][1] == email && accounts[k][2] == password) {
           found = true;
+          sessionStorage.setItem("currentLogin", email);
           if (accounts[k][3] == "freelancer") {
             window.open("../freelancer.html", "_self");
           } else {
@@ -96,4 +101,30 @@ function logIn() {
     document.getElementById("login-email").value = "";
     document.getElementById("login-password").value = "";
   } else alert("Os campos têm de estar preenchidos!");
+}
+
+function addProposal(title, description) {
+  let accounts = [];
+
+  for (let i = 1; i <= storageSize; i++) {
+    accounts.push(JSON.parse(localStorage.getItem(i)));
+  }
+
+  for (let k = 0; k < accounts.length; k++) {
+    for (let x = 0; x < accounts[k].length; x++) {
+      if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
+        accounts[k][4] = [title, description];
+        localStorage.setItem(
+          k + 1,
+          JSON.stringify([
+            accounts[k][0],
+            accounts[k][1],
+            accounts[k][2],
+            accounts[k][3],
+            accounts[k][4],
+          ])
+        );
+      }
+    }
+  }
 }

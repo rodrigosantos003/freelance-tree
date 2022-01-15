@@ -19,6 +19,7 @@
 }
 
 .work-list-item {
+  text-align: center;
   padding: 10px;
   overflow: auto;
 }
@@ -28,9 +29,4 @@
   background: #99ddcc;
   color: #141414;
   cursor: pointer;
-}
-
-.work-list-item img {
-  width: 30.4%;
-  float: left;
 }
