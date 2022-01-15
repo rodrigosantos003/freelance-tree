@@ -51,25 +51,25 @@
         <section class="form">
             <h3>Faz aqui o teu registo</h3>
 
-            <form method="post" action="#">
+            <form method="post" action="javascript:signUp()">
                 <div class="input-icons">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" name="name" placeholder="Nome" class="textbox">
+                    <input type="text" id="name" name="name" placeholder="Nome" class="textbox">
                 </div>
 
                 <div class="input-icons">
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" name="email" placeholder="Email" class="textbox">
+                    <input type="email" id="email" name="email" placeholder="Email" class="textbox">
                 </div>
 
                 <div class="input-icons">
                     <i class="fa fa-key icon"></i>
-                    <input type="password" name="password" placeholder="Password" class="textbox">
+                    <input type="password" id="password" name="password" placeholder="Password" class="textbox">
                 </div>
 
                 <div class="user-type">
-                    <input type="radio" name="user-type" value="cliente">Cliente
-                    <input type="radio" name="user-type" value="freelancer">Freelancer
+                    <input type="radio" id="client" name="user-type" value="cliente">Cliente
+                    <input type="radio" id="freelancer" name="user-type" value="freelancer">Freelancer
                 </div>
 
                 <input type="submit" value="Registar" class="button">
@@ -83,7 +83,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Copyright &copy; 2021 | Freelance Tree</p>
+        <p>Copyright &copy; 2022 | Freelance Tree</p>
     </footer>
 
     <!-- SCRIPTS -->

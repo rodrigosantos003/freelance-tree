@@ -21,3 +21,57 @@ function googleLogin() {
 function facebookLogin() {
   window.open("https://www.facebook.com/?ocid=topsitePT-PT");
 }
+
+//sign up
+var freelancers = [];
+var clients = [];
+
+function signUp() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let typeFreelancer = document.querySelector("#freelancer");
+  let typeClient = document.querySelector("#client");
+
+  if (
+    name != "" &&
+    email != "" &&
+    password != "" &&
+    (typeFreelancer.checked || typeClient.checked)
+  ) {
+    if (typeFreelancer.checked) {
+      freelancers.push([name, email, password]);
+
+      localStorage.setItem("freelancerUsers", JSON.stringify(freelancers));
+    } else {
+      clients.push([name, email, password]);
+
+      localStorage.setItem("clientUsers", JSON.stringify(clients));
+    }
+
+    alert("Conta criada com sucesso!");
+
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+    document.querySelector("#freelancer").checked = false;
+    document.querySelector("#client").checked = false;
+  } else alert("Os campos têm de estar preenchidos!");
+}
+
+function logIn() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  let freelanceUsers = JSON.parse(localStorage.getItem("freelancerUsers"));
+
+  if (email != "" && password != "") {
+    for (let i = 0; i < freelanceUsers.length; i++) {
+      for (let x = 0; x < freelanceUsers[i].length; x++) {
+        if (freelanceUsers[i][1] == email && freelanceUsers[i][2] == password) {
+          window.open("../freelancer.html", "_self");
+        }
+      }
+    }
+  } else alert("Os campos têm de estar preenchidos!");
+}
