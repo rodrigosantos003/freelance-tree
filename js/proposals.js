@@ -21,5 +21,5 @@ proposals.forEach(([title, description]) => {
   proposalDescription.innerText = description;
   listItem.appendChild(proposalTitle);
   listItem.appendChild(proposalDescription);
-  document.getElementById("list").appendChild(listItem);
+  document.getElementById("work-list").appendChild(listItem);
 });
