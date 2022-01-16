@@ -73,6 +73,8 @@ function signUp() {
     document.getElementById("signup-password").value = "";
     document.querySelector("#freelancer").checked = false;
     document.querySelector("#client").checked = false;
+
+    window.open("../login.html", "_self");
   } else alert("Os campos têm de estar preenchidos!");
 }
 
@@ -107,6 +109,7 @@ function logIn() {
   } else alert("Os campos têm de estar preenchidos!");
 }
 
+//add proposal do an account
 function addProposal(title, description) {
   let accounts = listAccounts();
 
