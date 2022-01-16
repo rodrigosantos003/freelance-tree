@@ -18,13 +18,13 @@
   margin-left: 20%;
 }
 
-.work-list-item {
+.work-list li {
   text-align: center;
   padding: 10px;
   overflow: auto;
 }
 
-.work-list-item:hover {
+.work-list li:hover {
   transition: 0.3s;
   background: #99ddcc;
   color: #141414;
