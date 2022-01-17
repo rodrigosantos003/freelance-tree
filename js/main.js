@@ -62,7 +62,7 @@ function signUp() {
     } else {
       localStorage.setItem(
         storageSize + 1,
-        JSON.stringify([name, email, password, "client"])
+        JSON.stringify([name, email, password, "client", []])
       );
     }
 
@@ -115,19 +115,19 @@ function logOut() {
   window.open("../index.html", "_self");
 }
 
-//add proposal do an account
-function addProposal(title, description) {
+//add project do an account
+function addProject(title, description) {
   let accounts = listAccounts();
 
-  let proposals = [];
+  let projects = [];
 
   for (let k = 0; k < accounts.length; k++) {
     if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
       for (let m = 0; m < accounts[k][4].length; m++) {
-        proposals.push(accounts[k][4][m]);
+        projects.push(accounts[k][4][m]);
       }
 
-      proposals.push([title, description]);
+      projects.push([title, description]);
 
       localStorage.setItem(
         k + 1,
@@ -136,7 +136,7 @@ function addProposal(title, description) {
           accounts[k][1],
           accounts[k][2],
           accounts[k][3],
-          proposals,
+          projects,
         ])
       );
     }
