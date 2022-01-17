@@ -142,3 +142,37 @@ function addProject(title, description) {
     }
   }
 }
+
+function createOffer() {
+  let title = prompt("Introduza o título do projeto");
+  let description = prompt("Introduza a descrição do projeto");
+  let category = prompt("Introduza a categoria do projeto");
+
+  let accounts = [];
+  let offers = [];
+
+  for (let i = 1; i <= localStorage.length; i++) {
+    accounts.push(JSON.parse(localStorage.getItem(i)));
+  }
+
+  for (let k = 0; k < accounts.length; k++) {
+    if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
+      for (let m = 0; m < accounts[k][4].length; m++) {
+        offers.push(accounts[k][4][m]);
+      }
+
+      offers.push([title, description, category]);
+
+      localStorage.setItem(
+        k + 1,
+        JSON.stringify([
+          accounts[k][0],
+          accounts[k][1],
+          accounts[k][2],
+          accounts[k][3],
+          offers,
+        ])
+      );
+    }
+  }
+}

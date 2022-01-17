@@ -56,13 +56,38 @@
 
             <div id="work">
                 <h3>Trabalhos</h3>
-                <button class="button" onclick="location.href='#'">Criar Oferta</button>
-                <ul class="work-list">
-                    <li class="work-list-item">
-                        <h4>Projeto #1</h4>
-                        <p>Descrição</p>
-                        <p>Estado</p>
-                    </li>
+                <button class="button" onclick="createOffer();">Criar Oferta</button>
+                <ul class="work-list" id="offers">
+                    <script>
+                        let accounts = [];
+                        let offers = [];
+
+                        for (let i = 1; i <= localStorage.length; i++) {
+                            accounts.push(JSON.parse(localStorage.getItem(i)));
+                        }
+
+                        for (let k = 0; k < accounts.length; k++) {
+                            if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
+                                for (let m = 0; m < accounts[k][4].length; m++) {
+                                    offers.push(accounts[k][4][m]);
+                                }
+                            }
+                        }
+
+                        offers.forEach(([title, description, category]) => {
+                            let listItem = document.createElement("li");
+                            let offerTitle = document.createElement("h4");
+                            let offerDescription = document.createElement("p");
+                            let offerCategory = document.createElement("p");
+                            offerTitle.innerText = title;
+                            offerDescription.innerText = description;
+                            offerCategory.innerText = "Categoria: " + category;
+                            listItem.appendChild(offerTitle);
+                            listItem.appendChild(offerDescription);
+                            listItem.appendChild(offerCategory);
+                            document.getElementById("offers").appendChild(listItem);
+                        });
+                    </script>
                 </ul>
             </div>
         </section>

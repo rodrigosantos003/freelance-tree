@@ -15,11 +15,11 @@ for (let k = 0; k < accounts.length; k++) {
 
 projects.forEach(([title, description]) => {
   let listItem = document.createElement("li");
-  let proposalTitle = document.createElement("h4");
-  let proposalDescription = document.createElement("p");
-  proposalTitle.innerText = title;
-  proposalDescription.innerText = description;
-  listItem.appendChild(proposalTitle);
-  listItem.appendChild(proposalDescription);
+  let projectTitle = document.createElement("h4");
+  let projectDescription = document.createElement("p");
+  projectTitle.innerText = title;
+  projectDescription.innerText = description;
+  listItem.appendChild(projectTitle);
+  listItem.appendChild(projectDescription);
   document.getElementById("work-list").appendChild(listItem);
 });
