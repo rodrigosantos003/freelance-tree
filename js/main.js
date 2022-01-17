@@ -109,6 +109,12 @@ function logIn() {
   } else alert("Os campos têm de estar preenchidos!");
 }
 
+//logout
+function logOut() {
+  sessionStorage.removeItem("currentLogin");
+  window.open("../index.html", "_self");
+}
+
 //add proposal do an account
 function addProposal(title, description) {
   let accounts = listAccounts();
