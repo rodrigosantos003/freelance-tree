@@ -47,69 +47,69 @@
     <main>
         <section class="categories">
             <h2>Categoria Programação & Tech</h2>
-            class="cards" id="cards">
-            <script>
-                let accounts = [];
-                let offers = [];
+            <ul class="cards" id="cards">
+                <script>
+                    let accounts = [];
+                    let offers = [];
 
-                for (let i = 1; i <= localStorage.length; i++) {
-                    accounts.push(JSON.parse(localStorage.getItem(i)));
-                }
+                    for (let i = 1; i <= localStorage.length; i++) {
+                        accounts.push(JSON.parse(localStorage.getItem(i)));
+                    }
 
-                for (let k = 0; k < accounts.length; k++) {
-                    if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
-                        for (let m = 0; m < accounts[k][4].length; m++) {
-                            offers.push(accounts[k][4][m]);
+                    for (let k = 0; k < accounts.length; k++) {
+                        if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
+                            for (let m = 0; m < accounts[k][4].length; m++) {
+                                offers.push(accounts[k][4][m]);
+                            }
                         }
                     }
-                }
 
-                offers.forEach(([title, description, category]) => {
-                    if (category == "Programação e Tech") {
-                        let listItem = document.createElement("li");
-                        let card = document.createElement("a");
-                        let cardImage = document.createElement("img");
-                        let cardOverlay = document.createElement("div");
-                        let cardHeader = document.createElement("div");
-                        let cardArc = document.createElement("svg");
-                        let cardHeaderText = document.createElement("div");
-                        let cardTitle = document.createElement("h3");
-                        let cardDescription = document.createElement("p");
+                    offers.forEach(([title, description, category]) => {
+                        if (category == "Programação e Tech") {
+                            let listItem = document.createElement("li");
+                            let card = document.createElement("a");
+                            let cardImage = document.createElement("img");
+                            let cardOverlay = document.createElement("div");
+                            let cardHeader = document.createElement("div");
+                            let cardArc = document.createElement("svg");
+                            let cardHeaderText = document.createElement("div");
+                            let cardTitle = document.createElement("h3");
+                            let cardDescription = document.createElement("p");
 
-                        card.href = "javascript:addProject('" + title + "', '" + description + "')";
-                        card.className = "card";
+                            card.href = "javascript:addProject('" + title + "', '" + description + "')";
+                            card.className = "card";
 
-                        cardImage.src = "../img/categorias/software.jpg";
-                        cardImage.className = "card-image"
+                            cardImage.src = "../img/categorias/software.jpg";
+                            cardImage.className = "card-image"
 
-                        cardOverlay.className = "card-overlay";
-                        cardHeader.className = "card-header";
+                            cardOverlay.className = "card-overlay";
+                            cardHeader.className = "card-header";
 
-                        cardArc.xmlns = "http://www.w3.org/2000/svg";
-                        cardArc.className = "card-arc";
+                            cardArc.xmlns = "http://www.w3.org/2000/svg";
+                            cardArc.className = "card-arc";
 
-                        cardHeaderText.className = "card-header-text";
-                        cardTitle.innerText = title;
-                        cardTitle.className = "card-title";
+                            cardHeaderText.className = "card-header-text";
+                            cardTitle.innerText = title;
+                            cardTitle.className = "card-title";
 
-                        cardDescription.innerText = description;
-                        cardDescription.className = "card-description";
+                            cardDescription.innerText = description;
+                            cardDescription.className = "card-description";
 
-                        cardHeaderText.appendChild(cardTitle);
-                        cardHeader.appendChild(cardArc);
-                        cardHeader.appendChild(cardHeaderText);
-                        cardOverlay.appendChild(cardHeader);
-                        cardOverlay.appendChild(cardDescription);
+                            cardHeaderText.appendChild(cardTitle);
+                            cardHeader.appendChild(cardArc);
+                            cardHeader.appendChild(cardHeaderText);
+                            cardOverlay.appendChild(cardHeader);
+                            cardOverlay.appendChild(cardDescription);
 
-                        card.appendChild(cardImage);
-                        card.appendChild(cardOverlay);
+                            card.appendChild(cardImage);
+                            card.appendChild(cardOverlay);
 
-                        listItem.appendChild(card);
-                        document.getElementById("cards").appendChild(listItem);
-                    }
+                            listItem.appendChild(card);
+                            document.getElementById("cards").appendChild(listItem);
+                        }
 
-                });
-            </script>
+                    });
+                </script>
             </ul>
         </section>
     </main>

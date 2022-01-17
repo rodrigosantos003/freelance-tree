@@ -50,8 +50,23 @@
             <h2>Cliente</h2>
 
             <div id="profile">
-                <h3 id="client-name">Nome</h3>
-                <p>Localização: </p>
+                <h3 id="client-name">
+                    <script>
+                        let acc = [];
+                        for (let i = 1; i <= localStorage.length; i++) {
+                            acc.push(JSON.parse(localStorage.getItem(i)));
+                        }
+
+                        for (let k = 0; k < acc.length; k++) {
+                            if (acc[k][1] == sessionStorage.getItem("currentLogin")) {
+                                document.getElementById("client-name").innerText = acc[k][0];
+                            }
+                        }
+                    </script>
+                </h3>
+                <p id="email">
+                    <script>document.getElementById("email").innerText = sessionStorage.getItem("currentLogin");</script>
+                </p>
             </div>
 
             <div id="work">

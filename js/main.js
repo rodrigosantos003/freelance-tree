@@ -52,7 +52,8 @@ function signUp() {
     name != "" &&
     email != "" &&
     password != "" &&
-    (typeFreelancer.checked || typeClient.checked)
+    typeFreelancer.checked &&
+    typeClient.checked
   ) {
     if (typeFreelancer.checked) {
       localStorage.setItem(
@@ -144,9 +145,37 @@ function addProject(title, description) {
 }
 
 function createOffer() {
-  let title = prompt("Introduza o título do projeto");
+  let title = document.getElementById("client-name").innerHTML;
   let description = prompt("Introduza a descrição do projeto");
-  let category = prompt("Introduza a categoria do projeto");
+  let category;
+
+  do {
+    category = prompt("Introduza a categoria do projeto");
+
+    if (
+      category != "Negócios" &&
+      category != "Dados" &&
+      category != "Marketing Digital" &&
+      category != "Gráficos e Design" &&
+      category != "Música e Áudio" &&
+      category != "Programação e Tech" &&
+      category != "Vídeo e Animação" &&
+      category != "Escrita e Redação"
+    ) {
+      alert(
+        "Introduza uma categoria válida!\nNegócios | Dados | Marketing Digital | Gráficos e Design | Música e Áudio | Programação e Tech | Vídeo e Animação | Escrita e Redação"
+      );
+    }
+  } while (
+    category != "Negócios" &&
+    category != "Dados" &&
+    category != "Marketing Digital" &&
+    category != "Gráficos e Design" &&
+    category != "Música e Áudio" &&
+    category != "Programação e Tech" &&
+    category != "Vídeo e Animação" &&
+    category != "Escrita e Redação"
+  );
 
   let accounts = [];
   let offers = [];
@@ -175,4 +204,6 @@ function createOffer() {
       );
     }
   }
+
+  location.reload();
 }
