@@ -28,18 +28,6 @@ function listAccounts() {
   return accounts;
 }
 
-//login with google
-function googleLogin() {
-  window.open(
-    "https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2Fb%2F0%2FAddMailService&followup=https%3A%2F%2Faccounts.google.com%2Fb%2F0%2FAddMailService&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
-  );
-}
-
-//login with facebook
-function facebookLogin() {
-  window.open("https://www.facebook.com/?ocid=topsitePT-PT");
-}
-
 //sign up
 function signUp() {
   let name = document.getElementById("signup-name").value;
@@ -52,8 +40,7 @@ function signUp() {
     name != "" &&
     email != "" &&
     password != "" &&
-    typeFreelancer.checked &&
-    typeClient.checked
+    (typeFreelancer.checked || typeClient.checked)
   ) {
     if (typeFreelancer.checked) {
       localStorage.setItem(
@@ -140,6 +127,38 @@ function addProject(title, description) {
           projects,
         ])
       );
+
+      alert("Projeto adicionado com sucesso!");
+    }
+  }
+}
+
+function forgotPassword() {
+  let accounts = listAccounts();
+  let projects = [];
+  let user = prompt("Introduza o seu email");
+
+  for (let x = 0; x < accounts.length; x++) {
+    if (accounts[x][1] == user) {
+      let password = prompt("Introduza a nova password");
+      accounts[x][2] = password;
+
+      for (let k = 0; k < accounts[x][4].length; k++) {
+        projects.push(accounts[x][4][k]);
+      }
+
+      localStorage.setItem(
+        x + 1,
+        JSON.stringify([
+          accounts[x][0],
+          accounts[x][1],
+          accounts[x][2],
+          accounts[x][3],
+          projects,
+        ])
+      );
+
+      alert("Password modificada com sucesso!");
     }
   }
 }
@@ -206,4 +225,14 @@ function createOffer() {
   }
 
   location.reload();
+}
+
+//open popup
+function openInfo(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+//close popup
+function closeInfo(id) {
+  document.getElementById(id).style.display = "none";
 }

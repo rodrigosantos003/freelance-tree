@@ -57,63 +57,57 @@
                     }
 
                     for (let k = 0; k < accounts.length; k++) {
-                        if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
-                            for (let m = 0; m < accounts[k][4].length; m++) {
-                                offers.push(accounts[k][4][m]);
-                            }
+                        for (let m = 0; m < accounts[k][4].length; m++) {
+                            offers.push(accounts[k][4][m]);
                         }
                     }
 
-                    if (offers.length == 0) {
-                        alert("Ainda não existem ofertas de trabalho nesta categoria!");
-                    }
-                    else {
-                        offers.forEach(([title, description, category]) => {
-                            if (category == "Gráficos e Design") {
-                                let listItem = document.createElement("li");
-                                let card = document.createElement("a");
-                                let cardImage = document.createElement("img");
-                                let cardOverlay = document.createElement("div");
-                                let cardHeader = document.createElement("div");
-                                let cardArc = document.createElement("svg");
-                                let cardHeaderText = document.createElement("div");
-                                let cardTitle = document.createElement("h3");
-                                let cardDescription = document.createElement("p");
 
-                                card.href = "javascript:addProject('" + title + "', '" + description + "')";
-                                card.className = "card";
+                    offers.forEach(([title, description, category]) => {
+                        if (category == "Gráficos e Design") {
+                            let listItem = document.createElement("li");
+                            let card = document.createElement("a");
+                            let cardImage = document.createElement("img");
+                            let cardOverlay = document.createElement("div");
+                            let cardHeader = document.createElement("div");
+                            let cardArc = document.createElement("svg");
+                            let cardHeaderText = document.createElement("div");
+                            let cardTitle = document.createElement("h3");
+                            let cardDescription = document.createElement("p");
 
-                                cardImage.src = "../img/categorias/design.jpg";
-                                cardImage.className = "card-image"
+                            card.href = "javascript:addProject('" + title + "', '" + description + "')";
+                            card.className = "card";
 
-                                cardOverlay.className = "card-overlay";
-                                cardHeader.className = "card-header";
+                            cardImage.src = "../img/categorias/design.jpg";
+                            cardImage.className = "card-image"
 
-                                cardArc.xmlns = "http://www.w3.org/2000/svg";
-                                cardArc.className = "card-arc";
+                            cardOverlay.className = "card-overlay";
+                            cardHeader.className = "card-header";
 
-                                cardHeaderText.className = "card-header-text";
-                                cardTitle.innerText = title;
-                                cardTitle.className = "card-title";
+                            cardArc.xmlns = "http://www.w3.org/2000/svg";
+                            cardArc.className = "card-arc";
 
-                                cardDescription.innerText = description;
-                                cardDescription.className = "card-description";
+                            cardHeaderText.className = "card-header-text";
+                            cardTitle.innerText = title;
+                            cardTitle.className = "card-title";
 
-                                cardHeaderText.appendChild(cardTitle);
-                                cardHeader.appendChild(cardArc);
-                                cardHeader.appendChild(cardHeaderText);
-                                cardOverlay.appendChild(cardHeader);
-                                cardOverlay.appendChild(cardDescription);
+                            cardDescription.innerText = description;
+                            cardDescription.className = "card-description";
 
-                                card.appendChild(cardImage);
-                                card.appendChild(cardOverlay);
+                            cardHeaderText.appendChild(cardTitle);
+                            cardHeader.appendChild(cardArc);
+                            cardHeader.appendChild(cardHeaderText);
+                            cardOverlay.appendChild(cardHeader);
+                            cardOverlay.appendChild(cardDescription);
 
-                                listItem.appendChild(card);
-                                document.getElementById("cards").appendChild(listItem);
-                            }
+                            card.appendChild(cardImage);
+                            card.appendChild(cardOverlay);
 
-                        });
-                    }
+                            listItem.appendChild(card);
+                            document.getElementById("cards").appendChild(listItem);
+                        }
+
+                    });
                 </script>
             </ul>
         </section>
