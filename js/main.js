@@ -1,41 +1,47 @@
-/*---------------------------------------
-              GENERAL            
-  -----------------------------------------*/
-//hide navbar with scroll
-var prevScrollpos = window.pageYOffset;
+//ESCONDER NAVBAR COM SCROLL
+var prevScrollpos = window.pageYOffset; /*obter a posição vertical da janela*/
+
+/*ação quando o user faz scroll*/
 window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
+  var currentScrollPos =
+    window.pageYOffset; /*obter a posição vertical atual da janela*/
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
+    /*se a posição anterior for maior que a atual*/
+    document.getElementById("navbar").style.top =
+      "0"; /*manter a posição da navbar*/
   } else {
-    document.getElementById("navbar").style.top = "-50%";
+    document.getElementById("navbar").style.top =
+      "-50%"; /*senão esconde a navbar*/
   }
-  prevScrollpos = currentScrollPos;
+  prevScrollpos =
+    currentScrollPos; /*atribuição da posição atual da janela à anterior*/
 };
 
-/*---------------------------------------
-              ACCOUNTS            
-  -----------------------------------------*/
-var storageSize = localStorage.length;
+var storageSize = localStorage.length; /*tamanho do armazenamento local*/
 
+//LISTAR CONTAS
 function listAccounts() {
   let accounts = [];
 
+  /*percorre todo o armazenamento local para armazenar os dados das contas no array*/
   for (let i = 1; i <= storageSize; i++) {
     accounts.push(JSON.parse(localStorage.getItem(i)));
   }
 
+  /*retorna o array de contas*/
   return accounts;
 }
 
-//sign up
+//REGISTO
 function signUp() {
+  /*obter valores dos campos do form*/
   let name = document.getElementById("signup-name").value;
   let email = document.getElementById("signup-email").value;
   let password = document.getElementById("signup-password").value;
   let typeFreelancer = document.querySelector("#freelancer");
   let typeClient = document.querySelector("#client");
 
+  /*verificação de campos vazios*/
   if (
     name != "" &&
     email != "" &&
@@ -43,40 +49,51 @@ function signUp() {
     (typeFreelancer.checked || typeClient.checked)
   ) {
     if (typeFreelancer.checked) {
+      /*se o tipo de user selecionado for freelancer, é armazenada a conta como freelancer*/
       localStorage.setItem(
         storageSize + 1,
         JSON.stringify([name, email, password, "freelancer", []])
       );
     } else {
+      /*senão (i.e cliente) é armazenada a conta como cliente*/
       localStorage.setItem(
         storageSize + 1,
         JSON.stringify([name, email, password, "client", []])
       );
     }
 
+    /*mensagem de sucesso*/
     alert("Conta criada com sucesso!");
 
+    /*limpar campos do form*/
     document.getElementById("signup-name").value = "";
     document.getElementById("signup-email").value = "";
     document.getElementById("signup-password").value = "";
     document.querySelector("#freelancer").checked = false;
     document.querySelector("#client").checked = false;
 
-    window.open("../login.html", "_self");
-  } else alert("Os campos têm de estar preenchidos!");
+    window.open("../login.html", "_self"); /*abrir página de login*/
+  } else
+    alert(
+      "Os campos têm de estar preenchidos!"
+    ); /*se algum dos campos não estiver preenchido, é apresentado um aviso*/
 }
 
-//log in
+//LOGIN
 function logIn() {
+  /*obter os valores dos campos do form*/
   let email = document.getElementById("login-email").value;
   let password = document.getElementById("login-password").value;
 
-  let accounts = listAccounts();
+  let accounts = listAccounts(); /*listar todoas as contas (através da função)*/
 
   let found = false;
 
+  /*verificação de campos vazios*/
   if (email != "" && password != "") {
+    /*percorrer todo o array de contas*/
     for (let k = 0; k < accounts.length; k++) {
+      /*se os dados corresponderem aos registados, é efetudado o login*/
       if (accounts[k][1] == email && accounts[k][2] == password) {
         found = true;
         sessionStorage.setItem("currentLogin", email);
@@ -88,28 +105,36 @@ function logIn() {
       }
     }
 
+    /*se a conta não for encontrada é apresentando um aviso*/
     if (!found) {
       alert("Os dados estão incorretos!");
     }
 
+    /*limpar os campos do form*/
     document.getElementById("login-email").value = "";
     document.getElementById("login-password").value = "";
-  } else alert("Os campos têm de estar preenchidos!");
+  } else
+    alert(
+      "Os campos têm de estar preenchidos!"
+    ); /*se algum dos campos não estiver preenchido, é apresentado um erro*/
 }
 
-//logout
+//LOGOUT
 function logOut() {
+  /*obter o login atual e removê-lo*/
   sessionStorage.removeItem("currentLogin");
   window.open("../index.html", "_self");
 }
 
-//add project do an account
+//ADICIONAR PROJETO A CONTA DE FREELANCER
 function addProject(title, description) {
-  let accounts = listAccounts();
+  let accounts = listAccounts(); /*listar contas*/
 
   let projects = [];
 
+  /*percorrer o array de contas*/
   for (let k = 0; k < accounts.length; k++) {
+    /*se a conta for igual à conta correspondente ao login atual, é adicionado o projeto a essa conta*/
     if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
       for (let m = 0; m < accounts[k][4].length; m++) {
         projects.push(accounts[k][4][m]);
@@ -133,12 +158,15 @@ function addProject(title, description) {
   }
 }
 
+//PASSWORD ESQUECIDA
 function forgotPassword() {
-  let accounts = listAccounts();
+  let accounts = listAccounts(); /*listar contas*/
   let projects = [];
-  let user = prompt("Introduza o seu email");
+  let user = prompt("Introduza o seu email"); /*leitura do email do user*/
 
+  /*percorrer o array de contas*/
   for (let x = 0; x < accounts.length; x++) {
+    /*se a conta for igual ao user, é lida a nova password e atualizada no array*/
     if (accounts[x][1] == user) {
       let password = prompt("Introduza a nova password");
       accounts[x][2] = password;
@@ -163,14 +191,21 @@ function forgotPassword() {
   }
 }
 
+//CRIAÇÃO DE OFERTAS DE TRABALHO POR CLIENTES
 function createOffer() {
+  /*obter o nome do cliente*/
   let title = document.getElementById("client-name").innerHTML;
+
+  /*leitura da descrição do projeto*/
   let description = prompt("Introduza a descrição do projeto");
+
   let category;
 
   do {
+    /*leitura da categoria do projeto*/
     category = prompt("Introduza a categoria do projeto");
 
+    /*verificação de categoria válida*/
     if (
       category != "Negócios" &&
       category != "Dados" &&
@@ -181,6 +216,7 @@ function createOffer() {
       category != "Vídeo e Animação" &&
       category != "Escrita e Redação"
     ) {
+      /*se o user introduziir uma categoria inválida é apresentado um aviso*/
       alert(
         "Introduza uma categoria válida!\nNegócios | Dados | Marketing Digital | Gráficos e Design | Música e Áudio | Programação e Tech | Vídeo e Animação | Escrita e Redação"
       );
@@ -196,14 +232,12 @@ function createOffer() {
     category != "Escrita e Redação"
   );
 
-  let accounts = [];
+  let accounts = listAccounts();
   let offers = [];
 
-  for (let i = 1; i <= localStorage.length; i++) {
-    accounts.push(JSON.parse(localStorage.getItem(i)));
-  }
-
+  /*percorrer o array de contas*/
   for (let k = 0; k < accounts.length; k++) {
+    /*se a conta for igual ao login atual, é adicionado a oferta a essa conta*/
     if (accounts[k][1] == sessionStorage.getItem("currentLogin")) {
       for (let m = 0; m < accounts[k][4].length; m++) {
         offers.push(accounts[k][4][m]);
@@ -224,15 +258,16 @@ function createOffer() {
     }
   }
 
+  /*recarregamento da página*/
   location.reload();
 }
 
-//open popup
+//ABRIR POPUP
 function openInfo(id) {
   document.getElementById(id).style.display = "block";
 }
 
-//close popup
+//FECHAR POPUP
 function closeInfo(id) {
   document.getElementById(id).style.display = "none";
 }
