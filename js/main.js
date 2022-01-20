@@ -41,42 +41,37 @@ function signUp() {
   let typeFreelancer = document.querySelector("#freelancer");
   let typeClient = document.querySelector("#client");
 
-  /*verificação de campos vazios*/
-  if (
-    name != "" &&
-    email != "" &&
-    password != "" &&
-    (typeFreelancer.checked || typeClient.checked)
-  ) {
-    if (typeFreelancer.checked) {
-      /*se o tipo de user selecionado for freelancer, é armazenada a conta como freelancer*/
-      localStorage.setItem(
-        storageSize + 1,
-        JSON.stringify([name, email, password, "freelancer", []])
-      );
-    } else {
-      /*senão (i.e cliente) é armazenada a conta como cliente*/
-      localStorage.setItem(
-        storageSize + 1,
-        JSON.stringify([name, email, password, "client", []])
-      );
-    }
+  /*verifica se o nome contém apenas letras*/
+  if (isNaN(name)) {
+    /*verifica se a password tem 8 ou mais caracteres*/
+    if (password.length >= 8) {
+      if (typeFreelancer.checked) {
+        /*se o tipo de user selecionado for freelancer, é armazenada a conta como freelancer*/
+        localStorage.setItem(
+          storageSize + 1,
+          JSON.stringify([name, email, password, "freelancer", []])
+        );
+      } else {
+        /*senão (i.e cliente) é armazenada a conta como cliente*/
+        localStorage.setItem(
+          storageSize + 1,
+          JSON.stringify([name, email, password, "client", []])
+        );
+      }
 
-    /*mensagem de sucesso*/
-    alert("Conta criada com sucesso!");
+      /*mensagem de sucesso*/
+      alert("Conta criada com sucesso!");
 
-    /*limpar campos do form*/
-    document.getElementById("signup-name").value = "";
-    document.getElementById("signup-email").value = "";
-    document.getElementById("signup-password").value = "";
-    document.querySelector("#freelancer").checked = false;
-    document.querySelector("#client").checked = false;
+      /*limpar campos do form*/
+      document.getElementById("signup-name").value = "";
+      document.getElementById("signup-email").value = "";
+      document.getElementById("signup-password").value = "";
+      document.querySelector("#freelancer").checked = false;
+      document.querySelector("#client").checked = false;
 
-    window.open("../login.html", "_self"); /*abrir página de login*/
-  } else
-    alert(
-      "Os campos têm de estar preenchidos!"
-    ); /*se algum dos campos não estiver preenchido, é apresentado um aviso*/
+      window.open("../login.html", "_self"); /*abrir página de login*/
+    } else alert("A password deve conter, pelo menos, 8 caracteres!");
+  } else alert("Introduza um nome válido!");
 }
 
 //LOGIN
@@ -89,34 +84,28 @@ function logIn() {
 
   let found = false;
 
-  /*verificação de campos vazios*/
-  if (email != "" && password != "") {
-    /*percorrer todo o array de contas*/
-    for (let k = 0; k < accounts.length; k++) {
-      /*se os dados corresponderem aos registados, é efetudado o login*/
-      if (accounts[k][1] == email && accounts[k][2] == password) {
-        found = true;
-        sessionStorage.setItem("currentLogin", email);
-        if (accounts[k][3] == "freelancer") {
-          window.open("../freelancer.html", "_self");
-        } else {
-          window.open("../client.html", "_self");
-        }
+  /*percorrer todo o array de contas*/
+  for (let k = 0; k < accounts.length; k++) {
+    /*se os dados corresponderem aos registados, é efetudado o login*/
+    if (accounts[k][1] == email && accounts[k][2] == password) {
+      found = true;
+      sessionStorage.setItem("currentLogin", email);
+      if (accounts[k][3] == "freelancer") {
+        window.open("../freelancer.html", "_self");
+      } else {
+        window.open("../client.html", "_self");
       }
     }
+  }
 
-    /*se a conta não for encontrada é apresentando um aviso*/
-    if (!found) {
-      alert("Os dados estão incorretos!");
-    }
+  /*se a conta não for encontrada é apresentando um aviso*/
+  if (!found) {
+    alert("Os dados estão incorretos!");
+  }
 
-    /*limpar os campos do form*/
-    document.getElementById("login-email").value = "";
-    document.getElementById("login-password").value = "";
-  } else
-    alert(
-      "Os campos têm de estar preenchidos!"
-    ); /*se algum dos campos não estiver preenchido, é apresentado um erro*/
+  /*limpar os campos do form*/
+  document.getElementById("login-email").value = "";
+  document.getElementById("login-password").value = "";
 }
 
 //LOGOUT

@@ -54,22 +54,23 @@
             <form method="post" action="javascript:signUp()">
                 <div class="input-icons">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" id="signup-name" name="name" placeholder="Nome" class="textbox">
+                    <input type="text" id="signup-name" name="name" placeholder="Nome" class="textbox" required>
                 </div>
 
                 <div class="input-icons">
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" id="signup-email" name="email" placeholder="Email" class="textbox">
+                    <input type="email" id="signup-email" name="email" placeholder="Email" class="textbox" required>
                 </div>
 
                 <div class="input-icons">
                     <i class="fa fa-key icon"></i>
-                    <input type="password" id="signup-password" name="password" placeholder="Password" class="textbox">
+                    <input type="password" id="signup-password" name="password" placeholder="Password" class="textbox"
+                        required>
                 </div>
 
                 <div class="user-type">
-                    <input type="radio" id="client" name="user-type" value="cliente">Cliente
-                    <input type="radio" id="freelancer" name="user-type" value="freelancer">Freelancer
+                    <input type="radio" id="client" name="user-type" value="cliente" required>Cliente
+                    <input type="radio" id="freelancer" name="user-type" value="freelancer" required>Freelancer
                 </div>
 
                 <input type="submit" value="Registar" class="button">

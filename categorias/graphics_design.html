@@ -49,6 +49,7 @@
             <h2>Categoria Gráficos e Design</h2>
             <ul class="cards" id="cards">
                 <script>
+                    //CONSTRUÇÃO DOS CARTÕES, UTILIZANDO A INFORMAÇÃO PRESENTE NAS CONTAS
                     let accounts = [];
                     let offers = [];
 
@@ -61,7 +62,6 @@
                             offers.push(accounts[k][4][m]);
                         }
                     }
-
 
                     offers.forEach(([title, description, category]) => {
                         if (category == "Gráficos e Design") {
