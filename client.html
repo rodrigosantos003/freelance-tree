@@ -91,13 +91,10 @@
 
                         offers.forEach(([title, description, category]) => {
                             let listItem = document.createElement("li");
-                            let offerTitle = document.createElement("h4");
-                            let offerDescription = document.createElement("p");
+                            let offerDescription = document.createElement("h4");
                             let offerCategory = document.createElement("p");
-                            offerTitle.innerText = title;
                             offerDescription.innerText = description;
                             offerCategory.innerText = "Categoria: " + category;
-                            listItem.appendChild(offerTitle);
                             listItem.appendChild(offerDescription);
                             listItem.appendChild(offerCategory);
                             document.getElementById("offers").appendChild(listItem);
