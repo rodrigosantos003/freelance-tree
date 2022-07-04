@@ -1,3 +1,4 @@
-# ipw-project
+# Projeto IPW - CTeSP TPSI
+Plataforma Freelance (front-end)
 
-Projeto Final IPW (CTeSP TPSI)
+## [Website](https://freelancetree.vercel.app)
